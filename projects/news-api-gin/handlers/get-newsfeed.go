@@ -5,7 +5,7 @@ import (
 	"github.com/gin-gonic/gin"
 )
 
-func GetNewsfeed(repo *newsfeed.Repo) gin.HandlerFunc {
+func GetNewsfeed(repo newsfeed.IGetter) gin.HandlerFunc {
 	return func(context *gin.Context) {
 		result := repo.GetAll()
 		context.JSON(200, result)

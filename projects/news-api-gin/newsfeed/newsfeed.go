@@ -1,5 +1,13 @@
 package newsfeed
 
+type IAdder interface {
+	Add(Item item)
+}
+
+type IGetter interface {
+	GetAll()
+}
+
 type Item struct {
 	Title string `json:"title"`
 	Post  string `json:"post"`

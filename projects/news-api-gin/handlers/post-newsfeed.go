@@ -10,7 +10,7 @@ type addNewsFeedRequest struct {
 	Post  string `json:"post"`
 }
 
-func PostNewsFeed(repo *newsfeed.Repo) gin.HandlerFunc {
+func PostNewsFeed(repo newsfeed.IAdder) gin.HandlerFunc {
 	return func(context *gin.Context) {
 
 		requestBody := addNewsFeedRequest{}
